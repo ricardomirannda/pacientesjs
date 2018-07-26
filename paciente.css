@@ -1,0 +1,24 @@
+body {
+    font-family: Arial;
+}
+
+table, tr, td, th {
+    border-collapse: collapse;
+    border: solid 2px #ccc;
+    margin:auto;
+    text-align: center;
+}
+
+tr, td {
+    padding: 6px;
+}
+
+th {
+    background-color: #dfdfdf;
+    padding: 15px;
+}
+
+
+.paciente-invalido {
+    color: red;
+}

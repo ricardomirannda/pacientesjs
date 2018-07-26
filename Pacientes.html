@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Pacientes</title>
+		<meta name="description" />
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="paciente.css">
+
+	</head>
+
+	<body>
+		<h1 class="col-md-offset-2 titulo">Aparecida Nutrição</h1>
+		<table id="tabela-pacientes">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Peso</th>
+					<th>Altura</th>
+					<th>Gordura</th>
+					<th>IMC</th>
+				</tr>
+			</thead>
+			<tbody id="tabela-pacientes">
+				<tr class="paciente">
+					<td class="info-nome">Ricardo Miranda</td>
+					<td width="10%" class="info-peso">10</td>
+					<td width="10%" class="info-altura">3.73</td>
+					<td width="10%" class="info-gordura">13</td>
+					<td width="15%" class="info-imc">30</td>
+				</tr>
+
+				<tr class="paciente">
+					<td class="info-nome">Naiara Cerqueira</td>
+					<td class="info-peso">-60</td>
+					<td class="info-altura">19965</td>
+					<td class="info-gordura">65</td>
+					<td class="info-imc">20</td>
+				</tr>
+
+				<tr class="paciente">
+					<td class="info-nome">Carmen Miranda Santana</td>
+					<td class="info-peso">72</td>
+					<td class="info-altura">1.58</td>
+					<td class="info-gordura">58</td>
+					<td class="info-imc">28</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="alert alert-danger" style="width:77%; margin:20px auto">
+
+		</div>
+
+		<br><br><br><br>
+
+		<form class="row" id="form-adiciona" style="margin:auto; width:80%; border:solid 1px #eee; padding:40px; border-radius:4px">
+			<h2>Novo Paciente</h2>
+
+			<div class="form-group col-md-4">
+				<label>Nome</label>
+				<input id="nome" name="nome" type="text" class="form-control">
+			</div>
+
+			<div class="form-group col-md-2">
+				<label>Peso</label>
+				<input id="peso" name="peso" type="text" class="form-control">
+			</div>
+
+			<div class="form-group col-md-2">
+				<label>Altura</label>
+				<input id="altura" name="altura" type="text" class="form-control">
+			</div>
+
+			<div class="form-group col-md-2">
+				<label>Gordura</label>
+				<input id="gordura" name="gordura" type="text" class="form-control">
+			</div>
+
+			<div class="form-group col-md-2">
+				<label>IMC</label>
+				<input id="imc" name="imc" type="text" class="form-control">
+			</div>
+
+			<div class="clearfix"></div>
+
+			<div class="text-right">
+				<button  type="submit" class="btn btn-success" id="adicionar-paciente">Salvar</button>
+			</div>
+		</form>
+
+		<script src="paciente.js"></script>
+
+	</body>
+</html>
