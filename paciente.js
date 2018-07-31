@@ -49,70 +49,15 @@ pacientes.forEach( paciente => {
 	}
 
 	if (pesoEhValido && alturaEhvalida) {
-		let imc = peso / (altura * altura);
-		tdImc.textContent = imc.toFixed(2);
-
-		console.log("Sucesso meu garoto")
+		let imc = calculaImc(peso, altura)
+		tdImc.textContent = imc;
 	}
 });
 
-let botaoAdicionar = document.querySelector("#adicionar-paciente");
 
-botaoAdicionar.addEventListener("click", event => {
-	event.preventDefault();
+function calculaImc (peso, altura) {
+	let imc = 0;
 
-	let form = document.querySelector("#form-adiciona");
-
-	// Dados do formulario
-	let nome 		= 	form.nome.value;
-	let peso 		= 	form.peso.value;
-	let altura 	= 	form.altura.value;
-	let gordura = 	form.gordura.value;
-	let imc 		= 	form.imc.value;
-
-	// Criando a TR do pacientes
-	let pacienteTr = document.createElement("tr");
-
-
-	// Criacao das colunas
-	let nomeTd 		= 	document.createElement("td");
-	let pesoTd 		= 	document.createElement("td");
-	let alturaTd 	= 	document.createElement("td");
-	let gorduraTd = 	document.createElement("td");
-	let imcTd 		= 	document.createElement("td");
-
-	// As colunas recebem os dados do formulário
-	nomeTd.textContent 		= 	nome;
-	pesoTd.textContent 		= 	peso;
-	alturaTd.textContent 	= 	altura;
-	gorduraTd.textContent = 	gordura;
-	imcTd.textContent 		= 	imc;
-
-	// Coloco as colunas como filhas da TR pacienteTr
-	pacienteTr.appendChild(nomeTd);
-	pacienteTr.appendChild(pesoTd);
-	pacienteTr.appendChild(alturaTd);
-	pacienteTr.appendChild(imcTd);
-	pacienteTr.appendChild(gorduraTd);
-	pacienteTr.appendChild(imcTd);
-
-	// Seleciona o TBODY para inserir as TR's
-	var tabela = document.querySelector("#tabela-pacientes");
-	tabela.appendChild(pacienteTr)
-
-console.log(tabela)
-
-	// let pessoa = [
-	// 	{
-	// 		nome:  nome,
-	// 		peso:  peso,
-	// 		altura:  altura,
-	// 		gordura:  gordura,
-	// 		imc: imc,
-	// 	}
-	// ];
-
-	// let pessoa = [nome, peso, altura, gordura, imc];
-
-
-});
+	imc = peso / (altura * altura);
+	return imc.toFixed(2);
+}
