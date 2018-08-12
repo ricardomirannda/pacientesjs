@@ -12,24 +12,31 @@
 	</head>
 
 	<body>
-		<h1 class="col-md-offset-2 titulo">Aparecida Nutrição</h1>
+		<h1 class="col-md-offset-2 titulo">Aparecida Nutrição</h1> <br>
+
+		<div class="text-center">
+			<input type="text" name="filtro" class="form-group col-md-offset-2 col-md-2" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+		</div> <br> <br><br>
+
+		<div class="clearfix"></div>
+
 		<table id="tabela-pacientes">
 			<thead>
 				<tr>
 					<th>Nome</th>
-					<th>Peso</th>
-					<th>Altura</th>
-					<th>Gordura</th>
-					<th>IMC</th>
+					<th width="10%">Peso</th>
+					<th width="10%">Altura</th>
+					<th width="10%">Gordura</th>
+					<th width="10%">IMC</th>
 				</tr>
 			</thead>
 			<tbody id="tabela-pacientes">
 				<tr class="paciente">
 					<td class="info-nome">Ricardo Miranda</td>
-					<td width="10%" class="info-peso">10</td>
-					<td width="10%" class="info-altura">3.73</td>
+					<td width="10%" class="info-peso">60</td>
+					<td width="10%" class="info-altura">1.65</td>
 					<td width="10%" class="info-gordura">13</td>
-					<td width="15%" class="info-imc">30</td>
+					<td width="15%" class="info-imc">10</td>
 				</tr>
 
 				<tr class="paciente">
@@ -37,7 +44,7 @@
 					<td class="info-peso">72</td>
 					<td class="info-altura">1.58</td>
 					<td class="info-gordura">58</td>
-					<td class="info-imc">28</td>
+					<td class="info-imc">8</td>
 				</tr>
 			</tbody>
 		</table>
@@ -49,6 +56,10 @@
 		<br><br><br><br>
 
 		<form class="row" id="form-adiciona" style="margin:auto; width:80%; border:solid 1px #eee; padding:40px; border-radius:4px">
+
+			<ul class="mensagens-erro">
+			</ul>
+
 			<h2>Novo Paciente</h2>
 
 			<div class="form-group col-md-4">
@@ -83,7 +94,9 @@
 			</div>
 		</form>
 
-		<script src="paciente.js"></script>
+		<script src="calcula-imc.js"></script>
+		<script src="remover-paciente.js"></script>
+		<script src="filtrar.js"></script>
 		<script src="form.js"></script>
 
 	</body>

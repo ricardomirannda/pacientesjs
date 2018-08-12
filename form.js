@@ -8,14 +8,40 @@ botaoAdicionar.addEventListener("click", event => {
 
   let pacienteTr = montaTr(paciente);
 
+	let erros = validaPaciente(paciente)
+
+
+	if (erros.length > 0) {
+		exibeMensagensDeErro(erros);
+
+		return;
+	}
+
 	// Adicionando o paciente na tabela
-	var tabela = document.querySelector("#tabela-pacientes");
+	let tabela = document.querySelector("#tabela-pacientes");
 
   tabela.appendChild(pacienteTr)
 
   form.reset();
 
+	let mensagensErro = document.querySelector("#mensagens-erro");
+
 });
+
+function exibeMensagensDeErro(erros){
+	let ul = document.querySelector(".mensagens-erro");
+
+	ul.innerHTML = "";
+
+	erros.forEach( erro => {
+		let li = document.createElement("li");
+		li.textContent = erro;
+
+		ul.appendChild(li);
+
+	});
+}
+
 
 // Extraindo informacoes do paciente no formulario
 function obtemPacienteDoFormulario(form) {
@@ -45,7 +71,7 @@ function montaTr (paciente){
   return pacienteTr;
 }
 
-
+// Monta td
 function montaTd (dado, classe) {
 
   let td = document.createElement("td");
@@ -69,4 +95,26 @@ function montaTd (dado, classe) {
   gorduraTd.textContent = 	paciente.gordura;
   imcTd.textContent 		= 	paciente.imc;
 
+}
+
+// Valida paciente
+function validaPaciente(paciente) {
+	let erros = [];
+
+	if (paciente.nome.length == 0)
+		erros.push("O nome do paciente não pode ser vazio")
+
+	if (paciente.gordura.length == 0)
+		erros.push("O peso do paciente não pode ser vazio")
+
+	if (paciente.altura.length == 0)
+		erros.push("A altura do paciente não pode ser vazio")
+
+	if (!validaPeso (paciente.peso))
+		erros.push("Peso inválido");
+
+	if (!validaAltura (paciente.altura))
+		erros.push(" Altura inválida");
+
+	return erros;
 }
