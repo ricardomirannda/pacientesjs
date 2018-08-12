@@ -35,3 +35,8 @@ th {
 .invisivel {
   display: none;
 }
+
+.selecionado {
+  color: green;
+  font-weight: bold;
+}
